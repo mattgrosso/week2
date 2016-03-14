@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>T-Shirt Sales</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <style media="screen">
+
+/*CSS reset*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+/*Content container for everything on the page. Mostly so that I can have auto margin applied to everything at once.*/
+    .container{
+      width: 90%;
+      height: 500px;
+      margin: 50px 5%;
+    }
+
+/*This class is meant to be a class applied to every element on the page that has the blue border. With this I should be able to adjust all of the borders at once.*/
+    .box{
+      box-sizing: border-box;
+      border: solid #63A3DC 3px;
+    }
+
+/*This is the class for each of the three columns.*/
+    .column{
+      width: 28.5%;
+      height: 100%;
+      margin-top: 25px;
+      margin-left: 4%;
+      margin-bottom: 65px;
+      float: left;
+      position: relative;
+      min-width: 400px;
+    }
+
+/*This is the class for the titles and prices at the bottom of each shirt.*/
+    .labels{
+      width: 100%;
+      height: 50px;
+      margin-top: 25px;
+      color: #63A3DC;
+      font-family: "century gothic";
+      font-size: 30px;
+    }
+
+/*This is the title of each shirt. It has it's own class so I can float it left.*/
+    .shirttitle{
+      float: left;
+    }
+
+/*This is the price of each shirt. It has it's own class so I can float it right.*/
+    .shirtprice{
+      float: right;
+      font-weight: bold;
+    }
+
+/*This refers to the button in the top right of each column.*/
+    .flip{
+      border: 0;
+      border-left: solid #63A3DC 3px;
+      border-bottom: solid #63A3DC 3px;
+      position: absolute;
+      height: 35px;
+      width: 35px;
+      right: -2px;
+      top: -2px;
+      color: #63A3DC;
+      text-align: center;
+      font-size: 20px;
+    }
+
+/*This adds a margin to the undo icon in hte flip box.*/
+    .fa-undo{
+      margin-top: 6.25px;
+    }
+
+/*This inverts the colors on the flip icon on hover.*/
+    .flip:hover{
+      background-color: #63A3DC;
+      color: white;
+    }
+
+/*This is the boundary box for the image of the shirt.*/
+    .image{
+      border: 0;
+      border-bottom: solid #63A3DC 3px;
+      width: 100%;
+      height: 85%;
+    }
+
+/*This is the actual image used for each shirt.*/
+    .shirtimage{
+      position: absolute;
+      top: 5%;
+      left: 50px;
+    }
+
+/*Let's try to flip this shit.*/
+
+    .back{
+      transform-style: preserve-3d;
+      z-index: 0;
+      transition: 2s;
+      transform: rotateY(180deg);
+    }
+
+    .front{
+      transform-style: preserve-3d;
+      z-index: 1;
+      transition: 2s;
+      transform: rotateY(0deg);
+
+    }
+/*This is a div meant to contain all of the buttons at the bottom of each image.*/
+    .buttonpanel{
+      height: 15%;
+    }
+
+/*This class controls all of the buttons at the bottom of each image.*/
+    .button{
+      border: 0;
+      border-right: solid #63A3DC 3px;
+      width: 20%;
+      height: 100%;
+      float: left;
+      color: #63A3DC;
+      font-size: 35px;
+      position: relative;
+    }
+
+/*This is intended to invert the colors of the buttons on hover.*/
+    .button:hover{
+      background-color: #63A3DC;
+      color: white;
+    }
+
+/*The button on the right in each column needs to not have a border on the left side so that you don't end up with duplicate borders.*/
+    .button.last{
+      border: 0;
+    }
+
+/*This class is for each of the icons on the buttons.*/
+    .buttonicon{
+      position: absolute;
+      top: 20px;
+      left: 23px;
+    }
+
+/*This class controls the size chart hover menu.*/
+    .hoversizes{
+      width: 101px;
+      height: 250px;
+      position: absolute;
+      bottom: 20%;
+      left: 37.25%;
+      background-color: white;
+      opacity: 0;
+      border-radius: 7px;
+      z-index: 2;
+    }
+
+/*These next two classes are for formatting the icons in the size chart hover menu.*/
+    ul{
+      margin-top: 23px;
+      color: #63A3DC;
+    }
+
+    li{
+      list-style: none;
+      text-align: center;
+      margin: 12px;
+    }
+
+/*This class controls the color choice hover menu.*/
+    .colorchoice{
+      height: 35px;
+      width: 35px;
+      border: white solid 3px;
+      position: absolute;
+      top: 17px;
+      left: 19px;
+    }
+
+/*These are IDs for the three different default colors on the color buttons.*/
+    #colorchoice1{
+      background-color: #63A3DC;
+      border-radius: 7px;
+    }
+
+    #colorchoice2{
+      background-color: #D583AC;
+      border-radius: 7px;
+    }
+
+    #colorchoice3{
+      background-color: #DEB17E;
+      border-radius: 7px;
+    }
+
+/*These next six classes controll the position, arrangement and colors for the four colors in the color choice hover menu.*/
+    .hovercolors{
+      width: 104px;
+      height: 120px;
+      position: absolute;
+      bottom: 20%;
+      left: 57%;
+      background-color: white;
+      opacity: 0;
+      border-radius: 7px;
+      z-index: 2;
+    }
+
+    .coloroptions{
+      height: 94px;
+      width: 94px;
+      margin: auto;
+      margin-top: 14px;
+      position: relative;
+    }
+
+    .color1{
+      background-color: #63A3DC;
+      height: 35px;
+      width: 35px;
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      border-radius: 7px;
+    }
+
+    .color2{
+      background-color: #D583AC;
+      height: 35px;
+      width: 35px;
+      position: absolute;
+      top: 8px;
+      left: 50px;
+      border-radius: 7px;
+    }
+
+    .color3{
+      background-color: #DEB17E;
+      height: 35px;
+      width: 35px;
+      position: absolute;
+      top: 48px;
+      left: 10px;
+      border-radius: 7px;
+    }
+
+    .color4{
+      background-color: #8BB992;
+      height: 35px;
+      width: 35px;
+      position: absolute;
+      top: 48px;
+      left: 50px;
+      border-radius: 7px;
+    }
+
+/*These next two classes style the arrows at the bottom of each of the hover menus.*/
+    .arrow1{
+      height: 20px;
+      width: 20px;
+      background-color: white;
+      border-top: 0;
+      border-left: 0;
+      position: absolute;
+      top: 96.75%;
+      left: 36.5%;
+      transform: rotate(45deg);
+    }
+
+    .arrow2{
+      height: 20px;
+      width: 20px;
+      background-color: white;
+      border-top: 0;
+      border-left: 0;
+      position: absolute;
+      top: 93.5%;
+      left: 36.5%;
+      transform: rotate(45deg);
+    }
+
+/*These next six classes apply the transitions for the hover menus to appear and move into position for each of the six hover menus (2 per column).*/
+    .hover1a:hover + .hoversizes{
+      transition: 0.5s;
+      bottom: 15%;
+      left: 37.25%;
+      opacity: 1;
+    }
+
+    .hover1b:hover + .hovercolors{
+      transition: 0.5s;
+      bottom: 15%;
+      left: 57%;
+      opacity: 1;
+    }
+
+    .hover2a:hover + .hoversizes{
+      transition: 0.5s;
+      bottom: 15%;
+      left: 37.25%;
+      opacity: 1;
+    }
+
+    .hover2b:hover + .hovercolors{
+      transition: 0.5s;
+      bottom: 15%;
+      left: 57%;
+      opacity: 1;
+    }
+
+    .hover3a:hover + .hoversizes{
+      transition: 0.5s;
+      bottom: 15%;
+      left: 37.25%;
+      opacity: 1;
+    }
+
+    .hover3b:hover + .hovercolors{
+      transition: 0.5s;
+      bottom: 15%;
+      left: 57%;
+      opacity: 1;
+    }
+
+  </style>
+
+  <body>
+    <div class="container">
+
+      <div class="box column">
+
+        <div id="flip1" class="box flip">
+          <i class="fa fa-undo"></i>
+        </div>
+
+        <div class="box image">
+          <img id="back1" class="shirtimage back"src="http://i.imgur.com/nJyRZ0i.png" alt="Blue Shirt Back" />
+          <img id="front1" class="shirtimage front" src="http://i.imgur.com/f4MDU7O.png" alt="Blue Shirt Front" />
+        </div>
+
+        <div class="buttonpanel">
+          <div class="box button">
+            <i class="fa fa-refresh buttonicon"></i>
+          </div>
+          <div class="box button">
+            <i class="fa fa-heart-o buttonicon"></i>
+          </div>
+          <div class="box button hover1a">
+            <i class="fa fa-cogs buttonicon"></i>
+          </div>
+          <div class="box hoversizes">
+            <ul>
+              <li><i class="fa fa-user fa-4x"></i></li>
+              <li><i class="fa fa-user fa-3x"></i></li>
+              <li><i class="fa fa-user fa-2x"></i></li>
+              <li><i class="fa fa-user"></i></li>
+            </ul>
+            <div class="box arrow1"></div>
+          </div>
+          <div class="box button hover1b">
+            <div class="colorchoice" id="colorchoice1"></div>
+          </div>
+          <div class="box hovercolors">
+            <div class="coloroptions">
+              <div class="color1"></div>
+              <div class="color2"></div>
+              <div class="color3"></div>
+              <div class="color4"></div>
+            </div>
+            <div class="box arrow2"></div>
+          </div>
+          <div class="box button last">
+            <i class="fa fa-shopping-cart buttonicon"></i>
+          </div>
+        </div>
+
+        <div class="labels">
+          <p class="shirttitle">
+            Save My Trees
+          </p>
+          <p class="shirtprice">
+            $29
+          </p>
+        </div>
+
+
+      </div>
+
+
+      <div class="box column">
+
+        <div id="flip2" class="box flip">
+          <i class="fa fa-undo"></i>
+        </div>
+
+        <div class="box image">
+          <img id="back2" class="shirtimage back"src="http://i.imgur.com/MngWgdn.png" alt="Pink Shirt Back" />
+          <img id="front2" class="shirtimage front" src="http://i.imgur.com/g0RtIBk.png" alt="Pink Shirt Front" />
+        </div>
+
+        <div class="buttonpanel">
+          <div class="box button">
+            <i class="fa fa-refresh buttonicon"></i>
+          </div>
+          <div class="box button">
+            <i class="fa fa-heart-o buttonicon"></i>
+          </div>
+          <div class="box button hover1a">
+            <i class="fa fa-cogs buttonicon"></i>
+          </div>
+          <div class="box hoversizes">
+            <ul>
+              <li><i class="fa fa-user fa-4x"></i></li>
+              <li><i class="fa fa-user fa-3x"></i></li>
+              <li><i class="fa fa-user fa-2x"></i></li>
+              <li><i class="fa fa-user"></i></li>
+            </ul>
+            <div class="box arrow1"></div>
+          </div>
+          <div class="box button hover1b">
+            <div class="colorchoice" id="colorchoice2"></div>
+          </div>
+          <div class="box hovercolors">
+            <div class="coloroptions">
+              <div class="color1"></div>
+              <div class="color2"></div>
+              <div class="color3"></div>
+              <div class="color4"></div>
+            </div>
+            <div class="box arrow2"></div>
+          </div>
+          <div class="box button last">
+            <i class="fa fa-shopping-cart buttonicon"></i>
+          </div>
+        </div>
+
+        <div class="labels">
+          <p class="shirttitle">
+            Nature Lover
+          </p>
+          <p class="shirtprice">
+            $19
+          </p>
+        </div>
+
+
+
+
+      </div>
+
+
+
+      <div class="box column">
+
+        <div id="flip3" class="box flip">
+          <i class="fa fa-undo"></i>
+        </div>
+
+        <div class="box image">
+          <img id="back3" class="shirtimage back"src="http://i.imgur.com/ywAFUVA.png" alt="Orange Shirt Back" />
+          <img id="front3" class="shirtimage front" src="http://i.imgur.com/VLwmePn.png" alt="Orange Shirt Front" />
+        </div>
+
+        <div class="buttonpanel">
+          <div class="box button">
+            <i class="fa fa-refresh buttonicon"></i>
+          </div>
+          <div class="box button">
+            <i class="fa fa-heart-o buttonicon"></i>
+          </div>
+          <div class="box button hover1a">
+            <i class="fa fa-cogs buttonicon"></i>
+          </div>
+          <div class="box hoversizes">
+            <ul>
+              <li><i class="fa fa-user fa-4x"></i></li>
+              <li><i class="fa fa-user fa-3x"></i></li>
+              <li><i class="fa fa-user fa-2x"></i></li>
+              <li><i class="fa fa-user"></i></li>
+            </ul>
+            <div class="box arrow1"></div>
+          </div>
+          <div class="box button hover1b">
+            <div class="colorchoice" id="colorchoice3"></div>
+          </div>
+          <div class="box hovercolors">
+            <div class="coloroptions">
+              <div class="color1"></div>
+              <div class="color2"></div>
+              <div class="color3"></div>
+              <div class="color4"></div>
+            </div>
+            <div class="box arrow2"></div>
+          </div>
+          <div class="box button last">
+            <i class="fa fa-shopping-cart buttonicon"></i>
+          </div>
+        </div>
+        <div class="labels">
+          <p class="shirttitle">
+            Forrest Walk
+          </p>
+          <p class="shirtprice">
+            $39
+          </p>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+      var front1 = document.getElementById("front1");
+      var back1 = document.getElementById("back1");
+      var front2 = document.getElementById("front2");
+      var back2 = document.getElementById("back2");
+      var front3 = document.getElementById("front3");
+      var back3 = document.getElementById("back3");
+      var flip1 = document.getElementById("flip1");
+      var flip2 = document.getElementById("flip2");
+      var flip3 = document.getElementById("flip3");
+
+      flip1.addEventListener("click", function(){
+        if(front1.classList.contains("front")){
+          front1.classList.remove("front");
+          front1.classList.add("back");
+          back1.classList.remove("back");
+          back1.classList.add("front");
+        }
+        else{
+          front1.classList.remove("back");
+          front1.classList.add("front");
+          back1.classList.remove("front");
+          back1.classList.add("back");
+        }})
+
+      flip2.addEventListener("click", function(){
+        if(front2.classList.contains("front")){
+          front2.classList.remove("front");
+          front2.classList.add("back");
+          back2.classList.remove("back");
+          back2.classList.add("front");
+        }
+        else{
+          front2.classList.remove("back");
+          front2.classList.add("front");
+          back2.classList.remove("front");
+          back2.classList.add("back");
+        }})
+
+      flip3.addEventListener("click", function(){
+        if(front3.classList.contains("front")){
+          front3.classList.remove("front");
+          front3.classList.add("back");
+          back3.classList.remove("back");
+          back3.classList.add("front");
+        }
+        else{
+          front3.classList.remove("back");
+          front3.classList.add("front");
+          back3.classList.remove("front");
+          back3.classList.add("back");
+        }})
+
+
+    </script>
+
+  </body>
+</html>

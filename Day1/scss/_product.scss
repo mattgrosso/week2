@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.item{
+  width: (100%-(10*$standardmargin))/4;
+  position: relative;
+  float: left;
+  margin: $standardmargin;
+}
+
+.shirtimage{
+  box-sizing: border-box;
+  border: solid $colorthemelight 3px;
+  width: 100%;
+  padding: 5%;
+  margin: 0 0 -6px 0;
+}
+
+.buttonpanel{
+  width: 100%;
+}
+
+li{
+  position: relative;
+  list-style: none;
+  box-sizing: border-box;
+  /*border: solid $colorthemelight 3px;*/
+  border-right: solid $colorthemelight 3px;
+  border-bottom: solid $colorthemelight 3px;
+  width: 20%;
+  float: left;
+  font-size: 3vmin;
+  /*font-size: 250%;*/
+  color: $colorthemelight;
+  text-align: center;
+  padding: 3% 0 2.7% 0;
+
+  &:hover{
+    background-color: $colorthemelight;
+    color: white;
+  }
+}
+
+.firstbutton{
+  border-left: solid $colorthemelight 3px;
+}
+
+.abc{
+  position: relative;
+}
+
+.sizechart{
+  padding: 30%;
+  @include hoversize();
+  left: -42%;
+  border: solid $colorthemelight 3px;
+  background-color: white;
+  opacity: 0;
+  z-index: -1;
+
+  li{
+    font-size: 2.25vmin;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    float: none;
+  }
+}
+
+.sizebutton:hover > .sizechart{
+  bottom: 100%;
+  opacity: 1;
+  transition: 0.7s;
+  z-index: 1;
+}
+
+.colorchart{
+  padding: 10%;
+  @include hoversize();
+  left: -19%;
+  border: solid $colorthemelight 3px;
+  background-color: white;
+  opacity: 0;
+  z-index: -1;
+
+  li{
+    font-size: 2.25vmin;
+    text-align: center;
+    width: 50%;
+    border: 0;
+    float: left;
+  }
+}
+
+.colorbutton:hover > .colorchart{
+  bottom: 100%;
+  opacity: 1;
+  transition: 0.7s;
+  z-index: 1;
+}
+
+
+
+.flipbutton{
+  position: absolute;
+  border-right: 0;
+  border-left: solid $colorthemelight 3px;
+  top: 0%;
+  right: 0%;
+  padding: 1% 0 0.5% 0;
+  width: 15%;
+  font-size: 3vmin;
+  text-align: center;
+}
+
+.shirt{
+  color: $colorthemelight;
+  font-family: "century gothic";
+  font-size: 3vmin;
+  margin-top: 3.5%;
+}
+
+.name{
+  @extend .shirt;
+  float: left;
+}
+
+.price{
+  @extend .shirt;
+  float: right;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px){
+  .item{
+    width: (100%-(10*$standardmargin))/1;
+    margin: $standardmargin;
+    float: left;
+  }
+  li{
+    font-size: 8vmin;
+  }
+  .flipbutton{
+    font-size: 1.5em;
+  }
+  .shirtname{
+    font-size: 1.5em;
+  }
+  .shirtprice{
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px){
+  .item{
+    width: (100%-(10*$standardmargin))/2;
+    margin: $standardmargin;
+    float: left;
+  }
+  li{
+    font-size: 4vmin;
+  }
+  .flipbutton{
+    font-size: 3vmin;
+  }
+  .shirtname{
+    font-size: 1.5em;
+  }
+  .shirtprice{
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px){
+  .item{
+    width: (100%-(10*$standardmargin))/3;
+    float: left;
+  }
+  li{
+    font-size: 4vmin;
+  }
+  .flipbutton{
+    font-size: 3vmin;
+  }
+  .shirtname{
+    font-size: 1.5em;
+  }
+  .shirtprice{
+    font-size: 1.5em;
+  }
+}

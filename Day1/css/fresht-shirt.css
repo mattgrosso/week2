@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+
+
 .item{
   width: 20%;
   position: relative;
@@ -20,7 +22,7 @@
 
 .buttonpanel{
   width: 100%;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 /*.buttons span:nth-child(0n+1){
@@ -28,6 +30,7 @@
 }*/
 
 li{
+  position: relative;
   list-style: none;
   box-sizing: border-box;
   /*border: solid #63A3DC 3px;*/
@@ -51,45 +54,43 @@ li:hover{
   position: relative;
 }
 
-/*.sizechart{
-  padding: 3%;
-  width: 18%;
+.sizechart{
+  padding: 30%;
+  width: 110%;
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 120%;
+  left: -42%;
+  border: solid #63A3DC 3px;
+  background-color: white;
+  opacity: 0;
+}
+
+.sizechart li{
+  font-size: 2.25vmin;
+  text-align: center;
+  width: 100%;
+  border: 0;
+  float: none;
+}
+
+.colorchart{
+  padding: 10%;
+  width: 110%;
+  position: absolute;
+  bottom: 120%;
+  left: -19%;
   border: solid #63A3DC 3px;
   background-color: white;
   opacity: 1;
 }
 
-.sizechart li{
+.colorchart li{
   font-size: 2.25vmin;
-  width: 100%;
+  text-align: center;
+  width: 50%;
   border: 0;
-  float: none;
-}*/
-
-/*.colorchart{
-  padding: 3%;
-  width: 18%;
-  position: absolute;
-  bottom: 11.4%;
-  left: 57%;
-  border: solid #63A3DC 3px;
-  background-color: white;
-  opacity: 0;
-}*/
-
-/*.colorchart:nth-child(odd){
-  color: red;
-}*/
-
-/*.colorchart li{
-  font-size: 3vmin;
-  width: 100%;
-  border: 0;
-  float: none;
-}*/
+  float: left;
+}
 
 .firstbutton{
   border-left: solid #63A3DC 3px;

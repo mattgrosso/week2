@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
+    <meta name="Description" content="A T-Shirt Ordering Site">
+    <meta name="author" content="Matt Grosso">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <title>T-Shirt Sales</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/content.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/content.css" media="screen">
 
   </head>
 
-
   <body>
-    <main class="container">
+    <div class="container">
 
-      <section class="box column">
+      <div class="box column">
 
-        <button id="flip1" class="box flip">
+        <div id="flip1" class="box flip">
           <i class="fa fa-undo"></i>
-        </button>
+        </div>
 
         <div class="box image">
-          <img id="back1" class="shirtimage back"src="http://i.imgur.com/nJyRZ0i.png" alt="Blue Shirt Back" />
+          <img id="back1" class="shirtimage back" src="http://i.imgur.com/nJyRZ0i.png" alt="Blue Shirt Back" />
           <img id="front1" class="shirtimage front" src="http://i.imgur.com/f4MDU7O.png" alt="Blue Shirt Front" />
         </div>
-        
-        <nav class="buttonpanel">
+
+        <div class="buttonpanel">
           <div class="box button">
             <i class="fa fa-refresh buttonicon"></i>
           </div>
@@ -45,7 +49,7 @@
             <div class="box arrow1"></div>
           </div>
           <div class="box button hover1b">
-            <div class="colorchoice" id="colorchoice1"></div>
+            <i class="fa fa-square buttonicon"></i>
           </div>
           <div class="box hovercolors">
             <div class="coloroptions">
@@ -59,7 +63,7 @@
           <div class="box button last">
             <i class="fa fa-shopping-cart buttonicon"></i>
           </div>
-        </nav>
+        </div>
 
         <div class="labels">
           <p class="shirttitle">
@@ -71,21 +75,21 @@
         </div>
 
 
-      </section>
+      </div>
 
 
-      <section class="box column">
+      <div class="box column">
 
         <div id="flip2" class="box flip">
           <i class="fa fa-undo"></i>
         </div>
 
         <div class="box image">
-          <img id="back2" class="shirtimage back"src="http://i.imgur.com/MngWgdn.png" alt="Pink Shirt Back" />
+          <img id="back2" class="shirtimage back" src="http://i.imgur.com/MngWgdn.png" alt="Pink Shirt Back" />
           <img id="front2" class="shirtimage front" src="http://i.imgur.com/g0RtIBk.png" alt="Pink Shirt Front" />
         </div>
 
-        <nav class="buttonpanel">
+        <div class="buttonpanel">
           <div class="box button">
             <i class="fa fa-refresh buttonicon"></i>
           </div>
@@ -119,7 +123,7 @@
           <div class="box button last">
             <i class="fa fa-shopping-cart buttonicon"></i>
           </div>
-        </nav>
+        </div>
 
         <div class="labels">
           <p class="shirttitle">
@@ -133,22 +137,22 @@
 
 
 
-      </section>
+      </div>
 
 
 
-      <section class="box column">
+      <div class="box column">
 
         <div id="flip3" class="box flip">
           <i class="fa fa-undo"></i>
         </div>
 
         <div class="box image">
-          <img id="back3" class="shirtimage back"src="http://i.imgur.com/ywAFUVA.png" alt="Orange Shirt Back" />
+          <img id="back3" class="shirtimage back" src="http://i.imgur.com/ywAFUVA.png" alt="Orange Shirt Back" />
           <img id="front3" class="shirtimage front" src="http://i.imgur.com/VLwmePn.png" alt="Orange Shirt Front" />
         </div>
 
-        <nav class="buttonpanel">
+        <div class="buttonpanel">
           <div class="box button">
             <i class="fa fa-refresh buttonicon"></i>
           </div>
@@ -182,7 +186,7 @@
           <div class="box button last">
             <i class="fa fa-shopping-cart buttonicon"></i>
           </div>
-        </nav>
+        </div>
         <div class="labels">
           <p class="shirttitle">
             Forrest Walk
@@ -191,68 +195,189 @@
             $39
           </p>
         </div>
+      </div>
+
+      <div class="box column">
+
+        <div id="flip1" class="box flip">
+          <i class="fa fa-undo"></i>
+        </div>
+
+        <div class="box image">
+          <img id="back1" class="shirtimage back" src="http://i.imgur.com/nJyRZ0i.png" alt="Blue Shirt Back" />
+          <img id="front1" class="shirtimage front" src="http://i.imgur.com/f4MDU7O.png" alt="Blue Shirt Front" />
+        </div>
+
+        <div class="buttonpanel">
+          <div class="box button">
+            <i class="fa fa-refresh buttonicon"></i>
+          </div>
+          <div class="box button">
+            <i class="fa fa-heart-o buttonicon"></i>
+          </div>
+          <div class="box button hover1a">
+            <i class="fa fa-cogs buttonicon"></i>
+          </div>
+          <div class="box hoversizes">
+            <ul>
+              <li><i class="fa fa-user fa-4x"></i></li>
+              <li><i class="fa fa-user fa-3x"></i></li>
+              <li><i class="fa fa-user fa-2x"></i></li>
+              <li><i class="fa fa-user"></i></li>
+            </ul>
+            <div class="box arrow1"></div>
+          </div>
+          <div class="box button hover1b">
+            <div class="colorchoice" id="colorchoice1"></div>
+          </div>
+          <div class="box hovercolors">
+            <div class="coloroptions">
+              <div class="color1"></div>
+              <div class="color2"></div>
+              <div class="color3"></div>
+              <div class="color4"></div>
+            </div>
+            <div class="box arrow2"></div>
+          </div>
+          <div class="box button last">
+            <i class="fa fa-shopping-cart buttonicon"></i>
+          </div>
+        </div>
+
+        <div class="labels">
+          <p class="shirttitle">
+            Save My Trees
+          </p>
+          <p class="shirtprice">
+            $29
+          </p>
+        </div>
+
+
+      </div>
+
+
+      <div class="box column">
+
+        <div id="flip2" class="box flip">
+          <i class="fa fa-undo"></i>
+        </div>
+
+        <div class="box image">
+          <img id="back2" class="shirtimage back" src="http://i.imgur.com/MngWgdn.png" alt="Pink Shirt Back" />
+          <img id="front2" class="shirtimage front" src="http://i.imgur.com/g0RtIBk.png" alt="Pink Shirt Front" />
+        </div>
+
+        <div class="buttonpanel">
+          <div class="box button">
+            <i class="fa fa-refresh buttonicon"></i>
+          </div>
+          <div class="box button">
+            <i class="fa fa-heart-o buttonicon"></i>
+          </div>
+          <div class="box button hover1a">
+            <i class="fa fa-cogs buttonicon"></i>
+          </div>
+          <div class="box hoversizes">
+            <ul>
+              <li><i class="fa fa-user fa-4x"></i></li>
+              <li><i class="fa fa-user fa-3x"></i></li>
+              <li><i class="fa fa-user fa-2x"></i></li>
+              <li><i class="fa fa-user"></i></li>
+            </ul>
+            <div class="box arrow1"></div>
+          </div>
+          <div class="box button hover1b">
+            <div class="colorchoice" id="colorchoice2"></div>
+          </div>
+          <div class="box hovercolors">
+            <div class="coloroptions">
+              <div class="color1"></div>
+              <div class="color2"></div>
+              <div class="color3"></div>
+              <div class="color4"></div>
+            </div>
+            <div class="box arrow2"></div>
+          </div>
+          <div class="box button last">
+            <i class="fa fa-shopping-cart buttonicon"></i>
+          </div>
+        </div>
+
+        <div class="labels">
+          <p class="shirttitle">
+            Nature Lover
+          </p>
+          <p class="shirtprice">
+            $19
+          </p>
+        </div>
 
 
 
-      </section>
 
-    </main>
-
-    <script type="text/javascript">
-      var front1 = document.getElementById("front1");
-      var back1 = document.getElementById("back1");
-      var front2 = document.getElementById("front2");
-      var back2 = document.getElementById("back2");
-      var front3 = document.getElementById("front3");
-      var back3 = document.getElementById("back3");
-      var flip1 = document.getElementById("flip1");
-      var flip2 = document.getElementById("flip2");
-      var flip3 = document.getElementById("flip3");
-
-      flip1.addEventListener("click", function(){
-        if(front1.classList.contains("front")){
-          front1.classList.remove("front");
-          front1.classList.add("back");
-          back1.classList.remove("back");
-          back1.classList.add("front");
-        }
-        else{
-          front1.classList.remove("back");
-          front1.classList.add("front");
-          back1.classList.remove("front");
-          back1.classList.add("back");
-        }})
-
-      flip2.addEventListener("click", function(){
-        if(front2.classList.contains("front")){
-          front2.classList.remove("front");
-          front2.classList.add("back");
-          back2.classList.remove("back");
-          back2.classList.add("front");
-        }
-        else{
-          front2.classList.remove("back");
-          front2.classList.add("front");
-          back2.classList.remove("front");
-          back2.classList.add("back");
-        }})
-
-      flip3.addEventListener("click", function(){
-        if(front3.classList.contains("front")){
-          front3.classList.remove("front");
-          front3.classList.add("back");
-          back3.classList.remove("back");
-          back3.classList.add("front");
-        }
-        else{
-          front3.classList.remove("back");
-          front3.classList.add("front");
-          back3.classList.remove("front");
-          back3.classList.add("back");
-        }})
+      </div>
 
 
-    </script>
+
+      <div class="box column">
+
+        <div id="flip3" class="box flip">
+          <i class="fa fa-undo"></i>
+        </div>
+
+        <div class="box image">
+          <img id="back3" class="shirtimage back" src="http://i.imgur.com/ywAFUVA.png" alt="Orange Shirt Back" />
+          <img id="front3" class="shirtimage front" src="http://i.imgur.com/VLwmePn.png" alt="Orange Shirt Front" />
+        </div>
+
+        <div class="buttonpanel">
+          <div class="box button">
+            <i class="fa fa-refresh buttonicon"></i>
+          </div>
+          <div class="box button">
+            <i class="fa fa-heart-o buttonicon"></i>
+          </div>
+          <div class="box button hover1a">
+            <i class="fa fa-cogs buttonicon"></i>
+          </div>
+          <div class="box hoversizes">
+            <ul>
+              <li><i class="fa fa-user fa-4x"></i></li>
+              <li><i class="fa fa-user fa-3x"></i></li>
+              <li><i class="fa fa-user fa-2x"></i></li>
+              <li><i class="fa fa-user"></i></li>
+            </ul>
+            <div class="box arrow1"></div>
+          </div>
+          <div class="box button hover1b">
+            <i class="fa fa-square buttonicon"></i>
+          </div>
+          <div class="box hovercolors">
+            <div class="coloroptions">
+              <div class="color1"></div>
+              <div class="color2"></div>
+              <div class="color3"></div>
+              <div class="color4"></div>
+            </div>
+            <div class="box arrow2"></div>
+          </div>
+          <div class="box button last">
+            <i class="fa fa-shopping-cart buttonicon"></i>
+          </div>
+        </div>
+        <div class="labels">
+          <p class="shirttitle">
+            Forrest Walk
+          </p>
+          <p class="shirtprice">
+            $39
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/shirtflip.js"></script>
 
   </body>
 </html>

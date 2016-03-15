@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.item{
+  width: 30%;
+}
+
+.shirtimage{
+  box-sizing: border-box;
+  border: solid #63A3DC 3px;
+  width: 100%;
+  padding: 5%;
+  margin: 0 0 -6px 0;
+}
+
+.buttonpanel{
+  width: 100%;
+  overflow: auto;
+}
+
+/*.buttons span:nth-child(0n+1){
+  border-left: solid #63A3DC 3px;
+}*/
+
+li{
+  list-style: none;
+  box-sizing: border-box;
+  /*border: solid #63A3DC 3px;*/
+  border-right: solid #63A3DC 3px;
+  border-bottom: solid #63A3DC 3px;
+  width: 20%;
+  float: left;
+  font-size: 3vmin;
+  /*font-size: 250%;*/
+  color: #63A3DC;
+  text-align: center;
+  padding: 3% 0 2.7% 0;
+}
+
+li:hover{
+  background-color: #63A3DC;
+  color: white;
+}
+
+.firstbutton{
+  border-left: solid #63A3DC 3px;
+}
+
+.flipbutton{
+  position: absolute;
+  border-right: 0;
+  border-left: solid #63A3DC 3px;
+  top: 0%;
+  left: 27%;
+  padding: 0.5% 0 0.5% 0;
+  width: 3%;
+  font-size: 2.2vmin;
+}
+
+.shirtname{
+  float: left;
+  color: #63A3DC;
+  font-family: "century gothic";
+  font-size: 2em;
+  margin-top: 3.5%;
+}
+
+.shirtprice{
+  float: right;
+  color: #63A3DC;
+  font-family: "century gothic";
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 3.5%;
+}

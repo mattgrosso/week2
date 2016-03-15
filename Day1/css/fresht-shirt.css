@@ -1,201 +1,34 @@
-*{
-  margin: 0;
-  padding: 0;
-}
+/*
+Error: Invalid CSS after "...ort "variables"": expected selector or at-rule, was "@import "mixins""
+        on line 3 of scss/fresht-shirt.scss
 
+1: 
+2: @import "variables"
+3: @import "mixins"
+4: @import "product"
 
-
-.item{
-  width: 20%;
-  position: relative;
-  float: left;
-  margin: 2.5%;
-}
-
-.shirtimage{
-  box-sizing: border-box;
-  border: solid #63A3DC 3px;
-  width: 100%;
-  padding: 5%;
-  margin: 0 0 -6px 0;
-}
-
-.buttonpanel{
-  width: 100%;
-  /*overflow: auto;*/
-}
-
-/*.buttons span:nth-child(0n+1){
-  border-left: solid #63A3DC 3px;
-}*/
-
-li{
-  position: relative;
-  list-style: none;
-  box-sizing: border-box;
-  /*border: solid #63A3DC 3px;*/
-  border-right: solid #63A3DC 3px;
-  border-bottom: solid #63A3DC 3px;
-  width: 20%;
-  float: left;
-  font-size: 3vmin;
-  /*font-size: 250%;*/
-  color: #63A3DC;
-  text-align: center;
-  padding: 3% 0 2.7% 0;
-}
-
-li:hover{
-  background-color: #63A3DC;
-  color: white;
-}
-
-.abc{
-  position: relative;
-}
-
-.sizechart{
-  padding: 30%;
-  width: 110%;
-  position: absolute;
-  bottom: 120%;
-  left: -42%;
-  border: solid #63A3DC 3px;
-  background-color: white;
-  opacity: 0;
-  z-index: -1;
-}
-
-.sizechart li{
-  font-size: 2.25vmin;
-  text-align: center;
-  width: 100%;
-  border: 0;
-  float: none;
-}
-
-.sizebutton:hover > .sizechart{
-  bottom: 100%;
-  opacity: 1;
-  transition: 0.7s;
-  z-index: 1;
-}
-
-.colorchart{
-  padding: 10%;
-  width: 110%;
-  position: absolute;
-  bottom: 120%;
-  left: -19%;
-  border: solid #63A3DC 3px;
-  background-color: white;
-  opacity: 0;
-  z-index: -1;
-}
-
-.colorchart li{
-  font-size: 2.25vmin;
-  text-align: center;
-  width: 50%;
-  border: 0;
-  float: left;
-}
-
-.colorbutton:hover > .colorchart{
-  bottom: 100%;
-  opacity: 1;
-  transition: 0.7s;
-  z-index: 1;
-}
-
-.firstbutton{
-  border-left: solid #63A3DC 3px;
-}
-
-.flipbutton{
-  position: absolute;
-  border-right: 0;
-  border-left: solid #63A3DC 3px;
-  top: 0%;
-  right: 0%;
-  padding: 1% 0 0.5% 0;
-  width: 15%;
-  font-size: 3vmin;
-  text-align: center;
-}
-
-.shirtname{
-  float: left;
-  color: #63A3DC;
-  font-family: "century gothic";
-  font-size: 3vmin;
-  margin-top: 3.5%;
-}
-
-.shirtprice{
-  float: right;
-  color: #63A3DC;
-  font-family: "century gothic";
-  font-size: 3vmin;
-  font-weight: bold;
-  margin-top: 3.5%;
-}
-
-@media screen and (max-width: 500px){
-  .item{
-    width: 90%;
-    margin: 5%;
-    float: left;
-  }
-  li{
-    font-size: 8vmin;
-  }
-  .flipbutton{
-    font-size: 1.5em;
-  }
-  .shirtname{
-    font-size: 1.5em;
-  }
-  .shirtprice{
-    font-size: 1.5em;
-  }
-}
-
-@media screen and (min-width: 501px) and (max-width: 800px){
-  .item{
-    width: 42%;
-    margin: 4%;
-    float: left;
-  }
-  li{
-    font-size: 4vmin;
-  }
-  .flipbutton{
-    font-size: 3vmin;
-  }
-  .shirtname{
-    font-size: 1.5em;
-  }
-  .shirtprice{
-    font-size: 1.5em;
-  }
-}
-
-@media screen and (min-width: 801px) and (max-width: 1200px){
-  .item{
-    width: 28%;
-    float: left;
-  }
-  li{
-    font-size: 4vmin;
-  }
-  .flipbutton{
-    font-size: 3vmin;
-  }
-  .shirtname{
-    font-size: 1.5em;
-  }
-  .shirtprice{
-    font-size: 1.5em;
-  }
-}
+Backtrace:
+scss/fresht-shirt.scss:3
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:40:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:403:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:471:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ort \"variables\"\": expected selector or at-rule, was \"@import \"mixins\"\"\A         on line 3 of scss/fresht-shirt.scss\A \A 1: \A 2: @import \"variables\"\A 3: @import \"mixins\"\A 4: @import \"product\""; }
